@@ -1,5 +1,6 @@
 # A*-Search-Algorithm-Implementation
-Implement the A* algorithm to find the shortest distance from the source to the target
+Implement the A* algorithm to find the shortest distance from the source to the target<br>
+Use the “parent” information to reconstruct the shortest path from the source to the target
 
 ## Getting Started
 
@@ -27,6 +28,24 @@ Usage: ./astar [input_case]
 ```
 
 ![image](https://github.com/chun128/A-star-Search-Algorithm-Implementation/blob/master/readme%20pictures/initial%20map.jpg)
+
+### Priority Queue
+use std::priority_queue <br>
+Operator overloading on priority_queue of object pointers<br>
+```
+priority_queue<Grid *, vector<Grid *>, cmp > priorityQ;
+```
+
+Operator overloading "cmp"
+```
+struct cmp
+{
+	bool operator()(const Grid *lhs, const Grid *rhs) 
+	{
+		return lhs->getTotalCost() > rhs->getTotalCost();
+	}
+};
+```
 
 
 ## Execution Result
